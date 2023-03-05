@@ -2,8 +2,9 @@ import { NavHashLink } from "react-router-hash-link";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "./Navbar.css";
-import Darkmode from "./Darkmode";
+import { useScrollPosition } from "../hooks/useScrollPosition";
+
+/* import Darkmode from "./Darkmode"; */
 
 const Navbar = ({ switchTheme }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -14,14 +15,16 @@ const Navbar = ({ switchTheme }) => {
     setIsClicked(!isClicked);
   };
 
+  const scrollPosition = useScrollPosition();
+
   return (
-    <div className="nav-main-cont">
+    <div
+      className={
+        scrollPosition > 0 ? "nav-main-cont nav-shadow" : "nav-main-cont"
+      }
+    >
       {/*  <Darkmode switchTheme={switchTheme} /> */}
-      <div
-        className={
-          isClicked ? "nav-menu-cont nav-menu-cont-visible" : "nav-menu-cont"
-        }
-      >
+      <div className={isClicked ? "nav-menu-cont active" : "nav-menu-cont"}>
         <NavHashLink
           to="/#fakeittillyoumakeit"
           className={
@@ -29,14 +32,6 @@ const Navbar = ({ switchTheme }) => {
           }
         >
           Toolkit
-        </NavHashLink>
-        <NavHashLink
-          to="/#fakeittillyoumakeit"
-          className={
-            isActive("/#fakeittillyoumakeit") ? "active-nav-links" : "nav-links"
-          }
-        >
-          About
         </NavHashLink>
         <NavHashLink
           to="/#fakeittillyoumakeit"
@@ -52,10 +47,21 @@ const Navbar = ({ switchTheme }) => {
             isActive("/#fakeittillyoumakeit") ? "active-nav-links" : "nav-links"
           }
         >
+          Story
+        </NavHashLink>
+        <NavHashLink
+          to="/#fakeittillyoumakeit"
+          className={
+            isActive("/#fakeittillyoumakeit") ? "active-nav-links" : "nav-links"
+          }
+        >
           Contact
         </NavHashLink>
       </div>
-      <div className="nav-icon-cont">
+      <label className="hamburger-menu nav-icon-cont">
+        <input type="checkbox" onChange={menuHandler} />
+      </label>
+      {/*       <div className="nav-icon-cont">
         {" "}
         {isClicked ? (
           <button className="nav-icon" onClick={menuHandler}>
@@ -68,7 +74,7 @@ const Navbar = ({ switchTheme }) => {
             <FaBars />
           </button>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

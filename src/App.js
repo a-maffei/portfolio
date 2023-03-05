@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Intro from "./components/Intro";
 import Toolkit from "./components/Toolkit";
 import Story from "./components/Story";
+import { Contact } from "./components/Contact";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
@@ -20,11 +21,15 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      <Navbar switchTheme={switchTheme} />
+      <header>
+        {" "}
+        <Navbar switchTheme={switchTheme} />
+      </header>
       <main>
         <Intro />
         <Toolkit />
         <Story />
+        <Contact />
       </main>
     </div>
   );

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import ale from "./img/alessandra.jpeg";
 
 export default function Story() {
   const [longStory, setLongStory] = useState(false);
@@ -24,6 +26,7 @@ export default function Story() {
           <p>This is the short story</p>
         </div>
       )}
+      <img src={ale} style={{ width: "200px" }}></img>
     </div>
   );
 }

@@ -1,8 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  padding: 0;
+  font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +9,28 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+*,
+x::after,
+x::backdrop {
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #885df1;
+  --lilac: #f5f2fe;
+  --pink: #f65282;
+  --light-pink: #ffdde8;
+  --yellow: #fbbc07;
+  --green: #2ecc71;
+  --black: #000000;
+  --white: #ffffffff;
+  --dark-grey: #212529;
+  --bar-width: 2.8rem;
+  --bar-height: 0.4rem;
+  --hamburger-gap: 0.3em;
+  --hamburger-margin: 6em;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
