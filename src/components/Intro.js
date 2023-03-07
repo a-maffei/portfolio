@@ -4,6 +4,7 @@ import { SocialIcon } from "react-social-icons";
 import { useState, useEffect } from "react";
 import { ALES } from "../ales";
 import { TypeAnimation } from "react-type-animation";
+import tape from "./img/mushitape.png";
 
 export default function Intro() {
   return (
@@ -40,7 +41,13 @@ export default function Intro() {
           amet, ante. Donec eu libero sit amet quam egestas semper.
         </p>
       </div>
-      <Alelio />
+      <div
+        className="
+      box"
+      >
+        <img src={tape} alt="mushi tape" className="tape"></img>
+        <Alelio />
+      </div>
     </div>
   );
 }

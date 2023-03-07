@@ -20,7 +20,8 @@ function App() {
   }, [theme]);
 
   return (
-    <div className="App" data-theme={theme}>
+    <div className="App">
+      <div className="background"> </div>
       <header>
         {" "}
         <Navbar switchTheme={switchTheme} />

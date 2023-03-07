@@ -58,9 +58,17 @@ const Navbar = ({ switchTheme }) => {
           Contact
         </NavHashLink>
       </div>
-      <label className="hamburger-menu nav-icon-cont">
-        <input type="checkbox" onChange={menuHandler} />
-      </label>
+      <div
+        className={
+          scrollPosition > 0
+            ? "hamburger-menu-cont nav-shadow"
+            : "hamburger-menu-cont"
+        }
+      >
+        <label className="hamburger-menu nav-icon-cont">
+          <input type="checkbox" onChange={menuHandler} />
+        </label>
+      </div>
       {/*       <div className="nav-icon-cont">
         {" "}
         {isClicked ? (
