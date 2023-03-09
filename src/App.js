@@ -6,25 +6,17 @@ import Intro from "./components/Intro";
 import Toolkit from "./components/Toolkit";
 import Story from "./components/Story";
 import { Contact } from "./components/Contact";
+import { keepTheme } from "./hooks/setTheme";
 
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme"));
-
-  const switchTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  };
-
   useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    keepTheme();
+  });
 
   return (
     <div className="App">
-      <div className="background"> </div>
       <header>
-        {" "}
-        <Navbar switchTheme={switchTheme} />
+        <Navbar />
       </header>
       <main>
         <Intro />

@@ -41,13 +41,15 @@ export default function Intro() {
           amet, ante. Donec eu libero sit amet quam egestas semper.
         </p>
       </div>
-      <div
-        className="
+      {
+        <div
+          className="
       box"
-      >
-        <img src={tape} alt="mushi tape" className="tape"></img>
-        <Alelio />
-      </div>
+        >
+          <img src={tape} alt="mushi tape" className="tape"></img>
+          <Alelio />
+        </div>
+      }
     </div>
   );
 }

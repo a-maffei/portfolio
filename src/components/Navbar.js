@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useScrollPosition } from "../hooks/useScrollPosition";
+import Darkmode from "./Darkmode";
 
 /* import Darkmode from "./Darkmode"; */
 
@@ -23,7 +24,7 @@ const Navbar = ({ switchTheme }) => {
         scrollPosition > 0 ? "nav-main-cont nav-shadow" : "nav-main-cont"
       }
     >
-      {/*  <Darkmode switchTheme={switchTheme} /> */}
+      <Darkmode switchTheme={switchTheme} />
       <div className={isClicked ? "nav-menu-cont active" : "nav-menu-cont"}>
         <NavHashLink
           to="/#fakeittillyoumakeit"
@@ -60,9 +61,7 @@ const Navbar = ({ switchTheme }) => {
       </div>
       <div
         className={
-          scrollPosition > 0
-            ? "hamburger-menu-cont nav-shadow"
-            : "hamburger-menu-cont"
+          scrollPosition > 0 ? "hamburger-menu-cont" : "hamburger-menu-cont"
         }
       >
         <label className="hamburger-menu nav-icon-cont">

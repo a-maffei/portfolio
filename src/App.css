@@ -10,12 +10,12 @@
 
 .nav-main-cont {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
-  background-color: #ffffff;
+  background-color: var(--background);
 }
 
 .nav-shadow {
@@ -37,14 +37,14 @@
   text-decoration: none;
   padding: 0.2rem 0.8rem;
   font-family: "Karla", sans-serif;
-  color: #66bfbf;
+  color: var(--pink);
 }
 
 .nav-links:hover {
   /*   text-shadow: 3px 3px 10px var(--lilac); */
   background-color: var(--light-pink);
   border-radius: 25px;
-  background-color: #eaf6f6;
+  background-color: var(--light-pink);
 }
 
 .nav-icon {
@@ -59,7 +59,6 @@
   width: max-content;
   position: absolute;
   top: 1.5rem;
-  right: 1.5rem;
   z-index: 2;
   cursor: pointer;
 }
@@ -67,18 +66,17 @@
 .hamburger-menu-cont {
   display: none;
   height: 10vh;
-  background-color: white;
+  /* background-color: var(--background); */
   justify-content: flex-end;
-  position: fixed;
-  top: 0;
-  width: 100%;
+  /* position: fixed;
+  top: 0; 
+  width: 100%;*/
   z-index: 1;
-  background-color: #ffffff;
 }
 
 .hamburger-menu:has(input:checked) {
-  --foreground: white;
-  --background: #333;
+  --foreground: var(--background);
+  --background: var(--primary-text);
 }
 
 .hamburger-menu:has(input:focus-visible)::before,
@@ -132,6 +130,11 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .nav-main-cont {
+    height: 15vh;
+    justify-content: space-around;
+  }
+
   .nav-icon {
     display: flex;
     flex-direction: column;
@@ -140,6 +143,12 @@
 
   .hamburger-menu-cont {
     display: flex;
+    width: 30%;
+  }
+
+  .hamburger-menu-cont label {
+    display: flex;
+    z-index: 20;
   }
 
   .nav-menu-cont {
@@ -156,12 +165,75 @@
     justify-content: center;
     gap: 1.5rem;
     transform: translateY(-100%);
+    z-index: 0;
   }
 
   .nav-menu-cont.active {
     transform: translateY(0);
     transition: transform 0.5s ease-in-out;
   }
+}
+
+/* Dark mode */
+
+#dark-toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  width: 30%;
+}
+
+.dark-switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  margin: 0 15px 0 10px;
+}
+
+.dark-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.dark-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  border-radius: 8px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  box-shadow: 0px 0px 3px var(--border);
+}
+
+.dark-slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--dark-switch);
+  border-radius: 8px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+input:checked + .dark-slider {
+  background-color: white;
+}
+
+input:checked + .dark-slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
 }
 
 /* Intro */
@@ -180,6 +252,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 5px 5px var(--shadow);
+}
+
+/* Set the color of the shadow */
+.box-shadow-color {
+  --shadow-color: var(--primary-text); /* Replace with your color variable */
+}
+
+/* Set the opacity of the shadow */
+.box-shadow-opacity {
+  --shadow-opacity: 0.5; /* Replace with your opacity value */
+}
+
+/* Combine the color and opacity values to create the shadow */
+.box-shadow {
+  box-shadow: 0px 5px 5px rgba(var(--shadow-color), var(--shadow-opacity));
 }
 
 .box::before,

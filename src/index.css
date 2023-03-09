@@ -9,18 +9,14 @@ x::backdrop {
   box-sizing: border-box;
 }
 
-:root {
-  --background: #27296d;
-  --primary: #5e63b6;
-  --purple: #885df1;
-  --lilac: #f5f2fe;
+.theme-light {
+  --background: #ffffff;
+  --primary-text: #000000;
   --pink: #ed5971;
   --light-pink: #ffdde8;
-  --yellow: #fbbc07;
-  --green: #2ecc71;
-  --black: #000000;
-  --white: #ffffffff;
+  --dark-switch: #ffdde8;
   --dark-grey: #212529;
+  --shadow: rgba(0, 0, 0, 0.1);
   --bar-width: 2.8rem;
   --bar-height: 0.4rem;
   --hamburger-gap: 0.3em;
@@ -29,10 +25,33 @@ x::backdrop {
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
+.theme-dark {
+  --background: #000000;
+  --primary-text: #ffffff;
+  --pink: #ed385f;
+  --shadow: rgba(255, 255, 255, 0.523);
+  --dark-switch: #ed385f;
+  --light-pink: #ffdde8;
+  --yellow: #fbbc07;
+  --green: #2ecc71;
+  --bar-width: 2.8rem;
+  --bar-height: 0.4rem;
+  --hamburger-gap: 0.3em;
+  --hamburger-margin: 6em;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+html,
+#root {
+  background-color: var(--background);
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Inconsolata", monospace;
+  color: var(--primary-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
