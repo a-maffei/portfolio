@@ -10,23 +10,25 @@ export default function Story() {
   };
 
   return (
-    <div>
-      <h2>My story</h2>
-      <div>
-        <button onClick={storyHandler}>
-          {longStory ? "tl;dr" : "long story"}
-        </button>
-      </div>
-      {longStory ? (
-        <div>
-          <p>This is the long story!</p>
+    <div className="section-cont">
+      <h2 className="section-title">My story</h2>
+      <button onClick={storyHandler}>
+        {longStory ? "tl;dr" : "long story"}
+      </button>
+      <div className="story-main-cont">
+        <div className="story-inner-cont">
+          {longStory ? (
+            <div>
+              <p>This is the long story!</p>
+            </div>
+          ) : (
+            <div>
+              <p>This is the short story</p>
+            </div>
+          )}
         </div>
-      ) : (
-        <div>
-          <p>This is the short story</p>
-        </div>
-      )}
-      <img src={ale} style={{ width: "200px" }}></img>
+        <img src={ale} style={{ width: "200px" }}></img>
+      </div>{" "}
     </div>
   );
 }

@@ -24,7 +24,7 @@
 
 .nav-menu-cont {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 0.5em;
   margin-right: 2em;
   height: max-content;
@@ -351,9 +351,89 @@ input:checked + .dark-slider:before {
 @media only screen and (max-width: 900px) {
   .intro-cont {
     flex-direction: column-reverse;
+    width: 90%;
+    margin-top: 8em;
   }
 
   .intro-text-cont {
     width: 85%;
   }
+
+  .box {
+    width: 20em;
+    height: 17em;
+  }
+}
+
+/* Toolkit */
+
+.section-cont {
+  width: 80%;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-family: "Karla", sans-serif;
+  color: var(--pink);
+  font-size: 2em;
+  margin-bottom: 2.5rem;
+}
+
+.toolkit-cont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.tool-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool-name {
+  font-size: 1em;
+}
+
+@media only screen and (max-width: 700px) {
+  .toolkit-cont {
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .toolkit-cont {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Story */
+
+.story-main-cont {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 70%;
+  margin-top: 2rem;
+}
+
+.story-inner-cont {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  align-items: center;
+  border-right: 2px solid var(--dark-switch);
+}
+
+.story-inner-cont p {
+  margin-top: 0;
 }

@@ -3,11 +3,11 @@ import { IconContext } from "react-icons";
 
 export default function ToolIcon({ icon, name }) {
   return (
-    <div>
+    <div className="tool-cont">
       <IconContext.Provider value={{ size: "3em" }}>
-        <div>{icon}</div>
+        <div className="tool-icon">{icon}</div>
       </IconContext.Provider>
-      <h3>{name}</h3>
+      <h3 className="tool-name">{name}</h3>
     </div>
   );
 }

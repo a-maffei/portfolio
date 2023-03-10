@@ -14,9 +14,10 @@ import { SiGit } from "react-icons/si";
 
 export default function Test() {
   return (
-    <div>
+    <div className="section-cont">
       {" "}
-      <div>
+      <h2 className="section-title">My Tech Toolkit</h2>
+      <div className="toolkit-cont">
         <ToolIcon icon={<SiHtml5 />} name="HTML" />
         <ToolIcon icon={<SiCss3 />} name="CSS" />
         <ToolIcon icon={<SiJavascript />} name="Javascript" />
@@ -24,10 +25,9 @@ export default function Test() {
         <ToolIcon icon={<SiReact />} name="React" />
         <ToolIcon icon={<SiNodedotjs />} name="Node.js" />
         <ToolIcon icon={<SiExpress />} name="Express" />
-        <ToolIcon icon={<SiPostgresql />} name="PostgresSQL" />
+        <ToolIcon icon={<SiGit />} name="Git/Github" />
         <ToolIcon icon={<SiMongodb />} name="Mongodb" />
         <ToolIcon icon={<SiTailwindcss />} name="TailwindCSS" />
-        <ToolIcon icon={<SiGit />} name="Git/Github" />
       </div>
     </div>
   );
