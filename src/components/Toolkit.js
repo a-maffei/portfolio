@@ -15,8 +15,8 @@ import { SiGit } from "react-icons/si";
 export default function Test() {
   return (
     <div className="section-cont">
-      {" "}
-      <h2 className="section-title">My Tech Toolkit</h2>
+      <h3 className="section-cat-title">Toolkit</h3>{" "}
+      <h2 className="section-title">My Tech Stack</h2>
       <div className="toolkit-cont">
         <ToolIcon icon={<SiHtml5 />} name="HTML" />
         <ToolIcon icon={<SiCss3 />} name="CSS" />

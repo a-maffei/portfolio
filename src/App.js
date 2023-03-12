@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Intro from "./components/Intro";
 import Toolkit from "./components/Toolkit";
 import Story from "./components/Story";
+import Projects from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { keepTheme } from "./hooks/setTheme";
 
@@ -21,6 +22,7 @@ function App() {
       <main>
         <Intro />
         <Toolkit />
+        <Projects />
         <Story />
         <Contact />
       </main>
